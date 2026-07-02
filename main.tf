@@ -9,6 +9,28 @@ terraform {
 
 provider "google" {
   project = "abhay-terraform-dev"
-  region  = "us-east1"       # Updated to match your bucket in image_a3b561.png
-  zone    = "us-east1-b"     # Updated to a free-tier zone in us-east1
+  region  = "us-east1"       # Matches your bucket region
+  zone    = "us-east1-b"     # Free-tier eligible zone
+}
+
+# ==========================================
+# THIS IS THE VM CODE TO ADD:
+# ==========================================
+resource "google_compute_instance" "my_free_vm" {
+  name         = "abhay-automated-vm"
+  machine_type = "e2-micro" # 100% Free Tier Eligible
+
+  boot_disk {
+    initialize_params {
+      image = "debian-cloud/debian-11"
+      size  = 10 # 10 GB (Well within the 30 GB free limit)
+    }
+  }
+
+  network_interface {
+    network = "default" # Connects to your default cloud network
+    access_config {
+      # This empty block gives your VM a free public IP address
+    }
+  }
 }

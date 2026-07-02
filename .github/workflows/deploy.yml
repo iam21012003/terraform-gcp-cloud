@@ -1,0 +1,31 @@
+name: "Automated Deployment Pipeline"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-infrastructure:
+    runs-on: ubuntu-latest
+
+    env:
+      GOOGLE_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
+
+    steps:
+    - name: Clone Code Repository
+      uses: actions/checkout@v4
+
+    - name: Install Terraform Engine on Runner
+      uses: hashicorp/setup-terraform@v3
+      with:
+        terraform_version: 1.6.0
+
+    - name: Initialize Workspace (Terraform Init)
+      run: terraform init
+
+    - name: Format Check
+      run: terraform fmt -check
+
+    - name: Execute and Build (Terraform Apply)
+      run: terraform apply -auto-approve
