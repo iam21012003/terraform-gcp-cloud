@@ -9,8 +9,8 @@ terraform {
 
 provider "google" {
   project = "abhay-terraform-dev"
-  region  = "us-east1"       # Matches your bucket region
-  zone    = "us-east1-b"     # Free-tier eligible zone
+  region  = "us-east1"   # Matches your bucket region
+  zone    = "us-east1-b" # Free-tier eligible zone
 }
 
 # ==========================================
