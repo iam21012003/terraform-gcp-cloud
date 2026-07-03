@@ -22,7 +22,7 @@ resource "google_compute_instance" "my_free_vm" {
   boot_disk {
     initialize_params {
       image = "debian-cloud/debian-11"
-      size  = 5 # 5 GB (Well within the 30 GB free limit)
+      size  = 10 # 10 GB (Well within the 30 GB free limit)
     }
   }
 
