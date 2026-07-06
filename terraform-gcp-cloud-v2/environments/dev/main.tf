@@ -24,7 +24,7 @@ module "app_vm" {
 module "vm_firewall" {
   source = "../../modules/firewall"
 
-  firewall_name = "allow-ssh-http-dev-v2"
+  firewall_name = "allow-ssh-http-dev"
   allowed_ports = ["22", "80"]
   target_tags   = ["ssh-allowed"]
 }

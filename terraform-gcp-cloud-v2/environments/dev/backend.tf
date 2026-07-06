@@ -3,7 +3,7 @@ terraform {
 
   backend "gcs" {
     bucket = "abhay-terraform-bucket-day2"
-    prefix = "terraform/state/v2-dev"
+    prefix = "terraform/state/dev"
   }
 }
 
