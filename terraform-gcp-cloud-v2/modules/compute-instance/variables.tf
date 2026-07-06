@@ -43,3 +43,9 @@ variable "startup_script" {
   type        = string
   default     = ""
 }
+
+variable "network" {
+  description = "VPC network for the instance"
+  type        = string
+  default     = "default"
+}
