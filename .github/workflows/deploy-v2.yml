@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: terraform-gcp-cloud-v2
+        working-directory: terraform-gcp-cloud-v2/environments/dev/
     env:
       GOOGLE_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
 
