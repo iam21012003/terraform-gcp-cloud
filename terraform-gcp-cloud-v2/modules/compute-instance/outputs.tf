@@ -1,7 +1,7 @@
 output "instance_name" {
   description = "Name of the created VM instance"
   value       = google_compute_instance.vm.name
-}  
+}
 
 output "public_ip" {
   description = "Public IP address of the VM instance"

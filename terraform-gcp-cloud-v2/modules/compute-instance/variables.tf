@@ -30,7 +30,7 @@ variable "tags" {
   description = "Network tags for firewall targeting"
   type        = list(string)
   default     = []
-} 
+}
 
 variable "labels" {
   description = "Labels for cost tracking"

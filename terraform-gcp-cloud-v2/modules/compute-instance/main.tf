@@ -3,7 +3,7 @@ resource "google_compute_instance" "vm" {
   machine_type = var.machine_type
   zone         = var.zone
   tags         = var.tags
-  labels      = var.labels
+  labels       = var.labels
 
   boot_disk {
     initialize_params {
@@ -13,7 +13,7 @@ resource "google_compute_instance" "vm" {
   }
 
   network_interface {
-    network = "var.network"
+    network = var.network
     access_config {}
   }
 
