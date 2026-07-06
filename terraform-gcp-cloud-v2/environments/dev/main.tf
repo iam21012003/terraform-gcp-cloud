@@ -30,5 +30,5 @@ module "vm_firewall" {
 }
 
 output "vm_public_ip" {
-  value = module.app_vm.instance_public_ip
+  value = module.app_vm.public_ip
 }
