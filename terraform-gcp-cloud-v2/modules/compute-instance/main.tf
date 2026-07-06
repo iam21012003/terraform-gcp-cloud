@@ -21,4 +21,4 @@ resource "google_compute_instance" "vm" {
 }
 
 
-# destroying
+# destroying again
