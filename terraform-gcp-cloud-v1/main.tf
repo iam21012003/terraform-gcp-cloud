@@ -33,3 +33,5 @@ resource "google_compute_instance" "my_free_vm" {
     }
   }
 }
+
+# testing github actions trigger
