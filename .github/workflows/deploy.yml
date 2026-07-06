@@ -8,7 +8,9 @@ on:
 jobs:
   deploy-infrastructure:
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        working-directory: terraform-gcp-cloud-v1
     env:
       GOOGLE_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
 
