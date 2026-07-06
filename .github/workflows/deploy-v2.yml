@@ -1,18 +1,18 @@
-name: "Automated Deployment Pipeline"
+name: "Terraform GCP Deployment - V2 Modular"
 
 on:
   push:
     branches:
       - main
     paths:
-      - 'terraform-gcp-cloud-v1/**'
-
+      - 'terraform-gcp-cloud-v2/**'
+      
 jobs:
-  deploy-infrastructure:
+  deploy-v2:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: terraform-gcp-cloud-v1
+        working-directory: terraform-gcp-cloud-v2
     env:
       GOOGLE_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
 
