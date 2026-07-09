@@ -34,4 +34,4 @@ resource "google_compute_instance" "my_free_vm" {
   }
 }
 
-#destroying v2
+#destroying v2   ddddd
